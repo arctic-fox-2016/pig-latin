@@ -4,35 +4,23 @@
 const readline = require('readline');
 
 function iteration_one(string){
-  var vowel_char = ["A", "I", "U", "E", "O"];
-  var final_string = "";
-  var first_vowel_flag = false;
-
-  for(var idx = 0; idx < vowel_char.length; idx++){
-    if(string.charAt(0).toLowerCase() == vowel_char[idx].toLowerCase()){
-      final_string = string;
-      first_vowel_flag = false;
-      break;
-    } else {
-      first_vowel_flag = true;
+  var vowel_char = ['A','I','U','E','O'];
+  for(var i=0;i<vowel_char.length;i++){
+    if(string[0].toLowerCase() == vowel_char[i].toLowerCase()){
+      return string;
     }
   }
 
-  if(first_vowel_flag){
-    for(var idx = 0; idx < string.length; idx++){
-      var current_vowel_flag = false;
-      for(var idy = 0; idy < vowel_char.length; idy++){
-        if(string.charAt(idx).toLowerCase() == vowel_char[idy].toLowerCase()){
-          current_vowel_flag = true;
-          break;
-        }
+  var new_string = "";
+  for(var i=0;i<string.length;i++){
+    for(var y=0;y<vowel_char.length;y++){
+      if(string[i].toLowerCase() != vowel_char[y].toLowerCase()){
+        if(y == vowel_char.length - 1) new_string += string[i];
+      } else {
+        return new_string + "ay.";
       }
-      if(!current_vowel_flag) final_string += string.charAt(idx);
-      else break;
     }
-    final_string += "ay.";
   }
-  return final_string;
 }
 
 function iteration_two(sentences)
