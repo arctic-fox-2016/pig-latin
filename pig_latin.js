@@ -18,8 +18,8 @@ return word.join("")
 }
 
 function pigsentence(sentences) {
-  words = sentences.split(" ")  
-  return words.map(pigword).join("")
+  words = sentences.split(" ")
+  return words.map(pigword).join(" ")
 }
 // words = words.split(" ");
 // for(var word in words){
