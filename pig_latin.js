@@ -17,7 +17,7 @@ function iteration_one(string){
       if(string[i].toLowerCase() != vowel_char[y].toLowerCase()){
         if(y == vowel_char.length - 1) new_string += string[i];
       } else {
-        return new_string + "ay.";
+        return string.substr(1) + new_string + "ay.";
       }
     }
   }
