@@ -14,7 +14,7 @@ function pig_latin_1word(inputText) {
   }
 
   if (isVowel == false) {
-    var hasil = inputText.slice(1,inputText.length) + firstLetter + "ay";
+    var hasil = inputText.slice(1 ,inputText.length) + firstLetter + "ay";
   } else { hasil = inputText;
   }
   return hasil;
@@ -33,5 +33,5 @@ function pig_latin(inputText){
 
 
 console.log("hello : " + pig_latin_1word("hello"));
-console.log("jalan : " + pig_latin_1word("jalan"));
-console.log("ayo : " + pig_latin("ayo jalan ke mall"));
+console.log("ayo : " + pig_latin_1word("ayo"));
+console.log("ayo jalan ke mall : " + pig_latin("ayo jalan ke mall"));
