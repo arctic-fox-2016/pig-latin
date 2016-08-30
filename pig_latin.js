@@ -7,12 +7,12 @@ var sentence = prompt();
 function pigword(word){
 word = word.split("");
 if(vowels.indexOf(word[0]) >= 0){
-  word.push("-yay");
+  word.push("ay.");
 } else{
   var s = word[0];
   word[word.length] = s;
   word[0]="";
-  word.push("-ay")
+  word.push("ay.")
 }
 return word.join("")
 }
