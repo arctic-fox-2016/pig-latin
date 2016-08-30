@@ -21,11 +21,17 @@ function pig_latin_1word(inputText) {
 }
 
 function pig_latin(inputText){
-  
+  var words = inputText.split(" ");
+  var hasil = "";
 
+  for (var i=0; i < words.length; i++) {
+    hasil += pig_latin_1word(words[i]) + " ";
+
+  }
+  return hasil;
 }
 
 
 console.log("hello : " + pig_latin_1word("hello"));
-console.log("ayo jalan jalan : " + pig_latin_1word("jalan"));
-console.log("ayo jalan jalan : " + pig_latin_1word("ayo"));
+console.log("jalan : " + pig_latin_1word("jalan"));
+console.log("ayo : " + pig_latin("ayo jalan ke mall"));
