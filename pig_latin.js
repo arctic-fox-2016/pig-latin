@@ -2,21 +2,20 @@
 
 //use readline to fix this challenge
 const readline = require('readline');
-let result = ""
-let endWord = ""
-let word = ""
-let convert = function (word){
 
+let kalimat = "baju katak andrew"
+let kalimatBaru = ""
+let convert = function (para){
+  let result = ""
+  let endWord = ""
+  let word = para
     if (word[0] == "a" ||word[0] == "i" ||word[0] == "u" ||word[0] == "e" ||word[0] == "o"){
       return word
 
     } else {
       while ((word.length >0) && (word[0] !== "a" && word[0] !== "i" && word[0] !== "u" && word[0] !== "e" && word[0] !== "o")){
-        console.log("...",word[0])
         endWord = endWord.concat(word[0])
-        console.log(">",endWord)
         word = word.substring(1,(word.length))
-        console.log(word)
       }
     endWord = endWord.concat("ay");
     result = word.concat(endWord);
@@ -24,4 +23,13 @@ let convert = function (word){
   return result
 }
 
-console.log(convert("bhaju"))
+let convertKalimat = function(parameter){
+  let arrayKalimat = parameter.split(" ");
+  for (let i=0; i<=(arrayKalimat.length)-1; i++){
+    kalimatBaru = kalimatBaru + " " +convert(arrayKalimat[i])
+
+  }
+  return kalimatBaru
+}
+
+console.log(convertKalimat(kalimat))
